@@ -123,6 +123,20 @@ Use timings as discussion material, not proof that collaboration is always equal
 
 At Level 2, shorten or revisit the exercise to introduce the AI bridge: inspecting a completed solution may not reveal what its commissioning conversation omitted.
 
+### Optional AI round: what can be delegated, and what needs shared understanding
+
+An optional fourth round, run as a **facilitator demonstration** rather than participant AI use, so it is compatible with the Level 1 no-AI policy. It answers the question participants often ask at Level 1: *why aren't we using AI?*
+
+1. **A separable task.** Photograph or type the cards into an AI tool and ask it to sort them alphabetically. Compare its time and result with the team's Round 1. Ask how confident they are in the result and how they would check it. A clear rule can be delegated and checked cheaply.
+2. **A shared-preference task.** Ask the AI to select the cards *this team* would be comfortable answering at work. Ask the group whether they would accept the selection and what the AI would need to know to choose well.
+3. **Contrast.** Ask whether anything the AI is missing could be supplied by a longer prompt, and who would decide what to include. Compare with Round 3, where the information and the decision were produced in the room.
+
+Teaching point: AI is not being excluded because it is unhelpful. Delegation works when the rule is clear and the result is cheap to verify. Where the task depends on preferences and context held by different people, the work is establishing shared understanding. Level 1 practises that first, without anything standing between the people and the code.
+
+Use the same no-explanation rule: nobody has to disclose why they would reject a card. Do not stage the demonstration so the AI is made to fail; report what it did. If it produces a plausible selection, ask what evidence would show it represents the group rather than the average card reader.
+
+**Level 2 use:** rerun this round briefly as an opener, with the team now operating the AI. Ask what the team must write down, and who must agree, before they would trust it with the second task. This leads into the working agreement and decision record.
+
 ## Shared AI operating model
 
 ### Two formal roles at Level 2
@@ -204,6 +218,8 @@ Introduce discovery here in a small form: participants can ask clarifying questi
 | New Year: countdown display | Format non-negative seconds; zero becomes "Happy New Year!" | Introduce singular/plural forms and unit boundaries | Incremental development and safe formatting refactoring |
 
 Ensure everyone experiences driver and navigator roles. Preserve the facilitator's contrasting refactoring finale and discussion of code ownership.
+
+If participants ask why AI is not used, the optional facilitator-run AI round in [the cards exercise](#the-cards-exercise) gives an experiential answer without anyone using AI during the programming.
 
 ## Level 2: team programming with one shared AI
 
@@ -307,6 +323,16 @@ After someone returns, ask them to explain:
 
 Observe what shared artifacts and team behavior make available without a long private briefing.
 
+#### Optional AI-specific interruptions
+
+These apply only to teams that have agreed to them in advance, and are used to reveal how much understanding lives in the shared artifacts rather than in one session.
+
+- **Context reset:** end or restart the agent conversation without notice. Observe how quickly the team resumes from its shared artifacts (agreed rules, decision record, tests). Announce afterwards that nothing was lost that the team should not have been able to recover.
+- **Context-file swap:** briefly exchange the shared working-agreement and decision record between two teams working on comparable problems, then ask what each team had to rediscover and what was misleading.
+- **Tool or model change:** switch the model or tool and ask the team what changed in the output and what stayed the same. Treat differences as hypotheses to check.
+
+Do not use these to embarrass a team or to prove that anything is fragile. Keep the reset short, state when it ends, and debrief what the team's artifacts made available.
+
 ### Shared versus separate coding agents
 
 Run short matched rounds: one shared-agent round and one round with separate participant agents followed by integration and handover. Reverse order across teams where practical.
@@ -332,8 +358,13 @@ Provide a working runtime, a tiny example, and a test command. Avoid turning the
 | Historical calendar reconciler | Two invented calendars and a supplied rulebook | Resolve an ambiguous era-boundary convention | Specification reasoning and distinguishing examples |
 | Christmas: toy workshop production planner | Shared machines, components, and fictional processing constraints | Objective shifts from individual toys to complete gift sets; speed increases waste | Understanding objectives before optimizing |
 | New Year: global midnight release planner | Supplied local-midnight UTC instants, injected clock, retries, duplicates, cancellations | Decide what happens when a delayed retry crosses the event boundary | Temporal policy and idempotency |
+| Christmas: reindeer dispatch scheduler (e.g. Prolog) | Fictional reindeer, rest and fatigue rules, routes, and weather windows; check a plan is valid before searching for one | A new constraint removes the only feasible plan, forcing a choice between relaxing a rule and changing the route | Modelling constraints explicitly before asking for an algorithm |
+| Christmas: naughty-or-nice rules engine | A supplied fictional policy document with overlapping and partly contradictory rules | Two rules give opposite answers for the same case; the stakeholder resolves some conflicts and leaves others to the team | Eliciting, recording, and justifying policy decisions |
+| New Year: Y2K replay (e.g. COBOL or a simulated legacy system) | A small legacy-style program using two-digit years; supplied sample data and a run command | Records spanning 1999 to 2000 behave differently; decide on a fix versus a migration | Reading unfamiliar code, characterization evidence, and verifying AI explanations of legacy behaviour |
 
 Museum rules are fictional, not conservation advice. Supplied UTC instants keep the New Year exercise focused on event policy rather than time-zone-library research.
+
+The reindeer scheduler and naughty-or-nice policy are fictional and abstract; no real people are assessed. For the reindeer exercise, a logic language such as Prolog suits the constraint model, but choose a language the actual participants do not know and provide the runtime and a test command. For the Y2K replay, provide a working legacy runtime (for example GnuCOBOL) or a small simulated equivalent, with sample data, so the session does not turn into installation troubleshooting. In every case the team verifies the agent's explanation of the rules or legacy code against supplied examples rather than treating it as documentation.
 
 ### Requirement elicitation
 

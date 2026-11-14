@@ -1,0 +1,5 @@
+{
+  "layout": "layouts/workshop.njk",
+  "tags": "workshop",
+  "permalink": "/workshops/{{ page.fileSlug }}/"
+}

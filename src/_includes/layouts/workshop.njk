@@ -1,0 +1,31 @@
+---
+layout: layouts/base.njk
+---
+{%- set list = collections.additionalWorkshops if additional else collections.workshops -%}
+{%- set prev = list | getPreviousCollectionItem(page) -%}
+{%- set next = list | getNextCollectionItem(page) -%}
+<main class="col page">
+  <a class="back" href="/">← Workshops</a>
+
+  <h1>{{ title }}</h1>
+  <p class="sub">{{ question }}</p>
+  <p class="facts">
+    {%- set facts = [("Additional workshop" if additional else "Workshop " ~ order), length, group, ai] -%}
+    {%- for f in facts %}{% if f %}{% if not loop.first %} · {% endif %}{{ f }}{% endif %}{% endfor -%}
+  </p>
+
+  <div class="content">
+{{ content | safe }}
+  </div>
+
+  {%- if status %}
+  <p class="note">{{ status }}</p>
+  {%- endif %}
+
+  {%- if prev or next %}
+  <nav class="next">
+    {% if prev %}<a href="{{ prev.url }}">← {{ prev.data.short or prev.data.title }}</a>{% else %}<span></span>{% endif %}
+    {% if next %}<a href="{{ next.url }}">{{ next.data.short or next.data.title }} →</a>{% endif %}
+  </nav>
+  {%- endif %}
+</main>

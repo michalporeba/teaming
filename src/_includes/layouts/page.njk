@@ -1,0 +1,19 @@
+---
+layout: layouts/base.njk
+---
+<main class="col page">
+  <a class="back" href="{{ back.url or '/' }}">← {{ back.label or 'Home' }}</a>
+
+  <h1>{{ title }}</h1>
+  {%- if lede %}
+  <p class="sub">{{ lede }}</p>
+  {%- endif %}
+
+  <div class="content">
+{{ content | safe }}
+  </div>
+
+  {%- if status %}
+  <p class="note">{{ status }}</p>
+  {%- endif %}
+</main>
